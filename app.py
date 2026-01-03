@@ -6,7 +6,7 @@ from http import HTTPStatus
 from datetime import datetime
 import json 
 
-from models.product import ProductModel
+from models.ProductModel import ProductModel
 from services.ProductService import ProductService
 
 print("Starting...")

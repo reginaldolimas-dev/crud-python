@@ -2,8 +2,8 @@ import logging
 import traceback
 import uuid
 
-from storage.product import ProductStorage
-from models.product import ProductModel
+from storage.ProductStorage import ProductStorage
+from models.ProductModel import ProductModel
 
 class ProductService:
     def __init__(self):

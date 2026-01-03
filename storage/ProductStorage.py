@@ -1,6 +1,6 @@
 import logging
 import sqlite3
-from models.product import ProductModel
+from models.ProductModel import ProductModel
 
 class ProductStorage:
     def __init__(self):

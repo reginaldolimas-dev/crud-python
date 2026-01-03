@@ -43,9 +43,21 @@ class ProductStorage:
     
     def get(self) -> list:
         try:
-            # TODO Retrieve all products from database
-            logging.debug(f"[PRODUCT-STORAGE] Retrieved {len(ret)} products")
-            return ret
+            cursor = self.conn.cursor()
+            cursor.execute("SELECT id, name, price, quantity FROM produtos")
+            rows = cursor.fetchall()
+
+            produtos = [
+            ProductModel(
+                id=row[0],
+                name=row[1],
+                price=row[2],
+                quantity=row[3]
+            )
+            for row in rows
+        ]
+            logging.debug(f"[PRODUCT-STORAGE] Retrieved {len(rows)} products")
+            return produtos
         except Exception as error:
             logging.error(f"[PRODUCT-STORAGE] Fail to get products: {error}")
             raise error

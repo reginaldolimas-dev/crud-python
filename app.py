@@ -55,11 +55,14 @@ def inserir():
         logging.error(f"[PRODUCT-API] {errorMsg}")
         return makeResponse(errorMsg), HTTPStatus.BAD_REQUEST
 
-@app.route("/products", methods = ['GET'])
-def get():
-    ret = {}
+@app.route("/produtos", methods = ['GET'])
+def buscar():
     try:
-        return makeResponse(f"All products"), HTTPStatus.NOT_IMPLEMENTED
+        produtos = service.buscar()
+        return makeResponse(
+            "Todos os Produtos",
+            { "total": len(produtos), "data": [produto.toDict() for produto in produtos] }
+        ), HTTPStatus.OK
     except Exception as error: 
         errorMsg = f"Error to try get all products: {error}"
         logging.error(f"[PRODUCT-API] {errorMsg}")

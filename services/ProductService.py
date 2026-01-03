@@ -31,10 +31,9 @@ class ProductService:
 
         return id
             
-    def get(self) -> list:
-        ret = {}
+    def buscar(self) -> list:
         try:
-            # TODO
+            ret = self.storage.get()
             logging.debug(f"[PRODUCT-SERVICE] Get all Products: {len(ret)} found")
         
         except Exception as error:

@@ -41,15 +41,40 @@ class ProductService:
         
         return ret
 
-    def getById(self, id:int) -> ProductModel:
-        ret = {}
+    def buscarPorId(self, id:int) -> ProductModel:
         try:
-            # TODO
+            produto = self.storage.getById(id)
             logging.debug(f"[PRODUCT-SERVICE] Get Product by ID: {id}")
+            return produto
         except Exception as error:
             logging.error(f"[PRODUCT-SERVICE] Fail: {error} -> {traceback.format_exc()}")
+            return None
 
         return ret
     
-    # TODO UPDATE
+    def atualizar(self, id: int, dados: dict) -> ProductModel:
+        try:
+            existente = self.storage.getById(id)
+            if existente is None:
+                logging.debug(f"[PRODUCT-SERVICE] Produto {id} não encontrado para atualização")
+                return None
+
+            produto_atualizado = ProductModel(
+                id=existente.id,
+                name=dados["name"] if "name" in dados else existente.name,
+                price=float(dados["price"]) if "price" in dados else existente.price,
+                quantity=int(dados["quantity"]) if "quantity" in dados else existente.quantity,
+            )
+
+            self._validacao(produto_atualizado)
+            logging.debug(f"[PRODUCT-SERVICE] Atualizando Produto ID {id}: {produto_atualizado.toJson()}")
+
+            atualizado = self.storage.update(id, produto_atualizado)
+            if not atualizado:
+                return None
+
+            return produto_atualizado
+        except Exception as error:
+            logging.error(f"[PRODUCT-SERVICE] Fail: {error} -> {traceback.format_exc()}")
+            raise
     # TODO DELETE

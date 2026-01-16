@@ -68,19 +68,47 @@ def buscar():
         logging.error(f"[PRODUCT-API] {errorMsg}")
         return makeResponse(errorMsg), HTTPStatus.INTERNAL_SERVER_ERROR    
 
-@app.route("/products/<id>", methods = ['GET'])
-def getById(id):
-    ret = {}
+@app.route("/produtos/<id>", methods = ['GET'])
+def buscarPorId(id):
     try:
-        return makeResponse(f"Product id {id}", { "data": ret.toDict() }), HTTPStatus.NOT_IMPLEMENTED
+        produto = service.buscarPorId(id)
+        if produto is None:
+            return makeResponse(f"Produto com ID {id} não encontrado"), HTTPStatus.NOT_FOUND
+        return makeResponse(f"Produto encontrado", { "data": produto.toDict() }), HTTPStatus.OK
     except Exception as error: 
         errorMsg = f"Error to try get product id {id}: {error}"
+        logging.error(f"[PRODUCT-API] {errorMsg}")
+        return makeResponse(errorMsg), HTTPStatus.INTERNAL_SERVER_ERROR    
+
+@app.route("/produtos/<id>", methods = ['PUT'])
+def atualizar(id):
+    try:
+        if not request.is_json:
+            return makeResponse(
+                "Requisição inválida: corpo JSON necessário"
+            ), HTTPStatus.BAD_REQUEST
+        
+        dados = request.get_json()
+        logging.debug(f"[PRODUCT-API] Update request data: {dados}")
+        
+        produto_atualizado = service.atualizar(int(id), dados)
+        
+        if produto_atualizado is None:
+            return makeResponse(f"Produto com ID {id} não encontrado"), HTTPStatus.NOT_FOUND
+        
+        return makeResponse(
+            f"Produto atualizado com sucesso",
+            {"data": produto_atualizado.toDict()}), HTTPStatus.OK
+    except ValueError as error:
+        errorMsg = f"Dados inválidos para atualizar produto id {id}: {error}"
+        logging.error(f"[PRODUCT-API] {errorMsg}")
+        return makeResponse(errorMsg), HTTPStatus.BAD_REQUEST
+    except Exception as error: 
+        errorMsg = f"Error to try update product id {id}: {error}"
         logging.error(f"[PRODUCT-API] {errorMsg}")
         return makeResponse(errorMsg), HTTPStatus.INTERNAL_SERVER_ERROR    
     
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
 
-# TODO UPDATE
 # TODO DELETE   
-

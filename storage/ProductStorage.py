@@ -9,7 +9,7 @@ class ProductStorage:
 
     def __createDataBase(self):
         if self.conn is None:
-            logging.error(f"[PRODUCT-STORAGE] Connection error!")
+            logging.error(f"[PRODUCT-STORAGE] Erro de conexão!")
         try:
             cursor = self.conn.cursor()
             cursor.execute("""
@@ -21,9 +21,9 @@ class ProductStorage:
             )
         """)
             self.conn.commit()
-            logging.debug(f"[PRODUCT-STORAGE] Creating Products table...")
+            logging.debug(f"[PRODUCT-STORAGE] Criando tabela Produtos...")
         except Exception as error: 
-            logging.error(f"[PRODUCT-STORAGE] Fail to create table: {error}")      
+            logging.error(f"[PRODUCT-STORAGE] Falha ao criar tabela: {error}")      
             raise error     
 
     def insert(self, produto: ProductModel) -> int:
@@ -35,10 +35,10 @@ class ProductStorage:
             """, (produto.name, produto.price, produto.quantity))
             id = cursor.lastrowid
             self.conn.commit()
-            logging.debug(f"[PRODUCT-STORAGE] Product inserted with ID {id}")
+            logging.debug(f"[PRODUCT-STORAGE] Produto inserido com ID {id}")
             return id
         except Exception as error:
-            logging.error(f"[PRODUCT-STORAGE] Fail to insert product: {error}")
+            logging.error(f"[PRODUCT-STORAGE] Falha ao inserir produto: {error}")
             raise error
     
     def get(self) -> list:
@@ -56,22 +56,52 @@ class ProductStorage:
             )
             for row in rows
         ]
-            logging.debug(f"[PRODUCT-STORAGE] Retrieved {len(rows)} products")
+            logging.debug(f"[PRODUCT-STORAGE] Recuperados {len(rows)} produtos")
             return produtos
         except Exception as error:
-            logging.error(f"[PRODUCT-STORAGE] Fail to get products: {error}")
+            logging.error(f"[PRODUCT-STORAGE] Falha ao recuperar produtos: {error}")
             raise error
     
     def getById(self, id: int) -> ProductModel:
-        ret = {}
         try:
-            # TODO Retrieve product by ID from database
-
-            logging.debug(f"[PRODUCT-STORAGE] Retrieved Product ID:{id}")
-            return ret
+            cursor = self.conn.cursor()
+            cursor.execute("SELECT id, name, price, quantity FROM produtos WHERE id = ?", (id,))
+            row = cursor.fetchone()
+            
+            if row is None:
+                logging.debug(f"[PRODUCT-STORAGE] Produto de ID {id} não encontrado.")
+                return None
+            
+            produto = ProductModel(
+                id=row[0],
+                name=row[1],
+                price=row[2],
+                quantity=row[3]
+            )
+            logging.debug(f"[PRODUCT-STORAGE] Produto de ID {id} recuperado.")
+            return produto
         except Exception as error:
-            logging.error(f"[PRODUCT-STORAGE] Fail to get product by ID: {error}")
+            logging.error(f"[PRODUCT-STORAGE] Falha ao recuperar produto por ID: {error}")
             raise error
         
-    # TODO UPDATE
+    def update(self, id: int, produto: ProductModel) -> bool:
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("""
+                UPDATE produtos 
+                SET name = ?, price = ?, quantity = ? 
+                WHERE id = ?
+            """, (produto.name, produto.price, produto.quantity, id))
+            self.conn.commit()
+            
+            if cursor.rowcount == 0:
+                logging.debug(f"[PRODUCT-STORAGE] Produto de ID {id} não encontrado para atualização.")
+                return False
+            
+            logging.debug(f"[PRODUCT-STORAGE] Produto de ID {id} atualizado com sucesso.")
+            return True
+        except Exception as error:
+            logging.error(f"[PRODUCT-STORAGE] Falha ao atualizar produto: {error}")
+            raise error
+    
     # TODO DELETE

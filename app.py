@@ -1,6 +1,7 @@
 #!/bin/env python3
 
 import logging
+import os
 from flask import Flask, request, jsonify
 from http import HTTPStatus
 from datetime import datetime
@@ -11,16 +12,22 @@ from services.ProductService import ProductService
 
 print("Starting...")
 
-app = Flask(__name__)
-service = ProductService()
+os.makedirs("logs", exist_ok=True)
+
 logging.basicConfig(
     level=logging.DEBUG, 
     format="%(asctime)s - %(levelname)s - %(message)s",
-    filename="/logs/products-service.log",
+    filename="logs/products-service.log",
     filemode='a',
-    datefmt='%H:%M:%S',
+    datefmt='%Y-%m-%d %H:%M:%S',
 )
-print("Exiting...")
+
+logging.info("=== Aplicação iniciando ===")
+
+app = Flask(__name__)
+service = ProductService()
+
+print("Aplicação iniciando...")
 
 def makeResponse(msg: str, args: dict = {}):
     ret = {

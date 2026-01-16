@@ -2,3 +2,47 @@
 13:19:58 - WARNING -  * Debugger is active!
 13:19:58 - INFO -  * Debugger PIN: 137-046-615
 13:21:40 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\app.py', reloading
+2026-01-16 14:02:24 - INFO - === Aplicação iniciando ===
+2026-01-16 14:02:24 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 14:02:24 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.20.4.29:5000
+2026-01-16 14:02:24 - INFO - [33mPress CTRL+C to quit[0m
+2026-01-16 14:02:49 - DEBUG - [PRODUCT-API] Request data: {'name': 'carro2', 'price': '100000', 'quantity': 1}
+2026-01-16 14:02:49 - DEBUG - [PRODUCT-SERVICE] Insert Product: {"id": null, "name": "carro2", "price": 100000.0, "quantity": 1}
+2026-01-16 14:02:49 - DEBUG - [PRODUCT-STORAGE] Produto inserido com ID 7
+2026-01-16 14:02:49 - INFO - 127.0.0.1 - - [16/Jan/2026 14:02:49] "[35m[1mPOST /produtos HTTP/1.1[0m" 201 -
+2026-01-16 14:03:13 - INFO - === Aplicação iniciando ===
+2026-01-16 14:03:13 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 14:03:13 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.20.4.29:5000
+2026-01-16 14:03:13 - INFO - [33mPress CTRL+C to quit[0m
+2026-01-16 14:03:22 - DEBUG - [PRODUCT-API] Request data: {'name': 'carro2', 'price': '100000', 'quantity': 1}
+2026-01-16 14:03:22 - DEBUG - [PRODUCT-SERVICE] Insert Product: {"id": null, "name": "carro2", "price": 100000.0, "quantity": 1}
+2026-01-16 14:03:22 - DEBUG - [PRODUCT-STORAGE] Produto inserido com ID 8
+2026-01-16 14:03:22 - INFO - 127.0.0.1 - - [16/Jan/2026 14:03:22] "[35m[1mPOST /produtos HTTP/1.1[0m" 201 -
+2026-01-16 14:03:36 - DEBUG - [PRODUCT-STORAGE] Recuperados 8 produtos
+2026-01-16 14:03:36 - DEBUG - [PRODUCT-SERVICE] Get all Products: 8 found
+2026-01-16 14:03:36 - INFO - 127.0.0.1 - - [16/Jan/2026 14:03:36] "GET /produtos HTTP/1.1" 200 -
+2026-01-16 14:04:00 - INFO - === Aplicação iniciando ===
+2026-01-16 14:04:00 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 14:04:01 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.20.4.29:5000
+2026-01-16 14:04:01 - INFO - [33mPress CTRL+C to quit[0m
+2026-01-16 14:04:01 - INFO -  * Restarting with stat
+2026-01-16 14:04:01 - INFO - === Aplicação iniciando ===
+2026-01-16 14:04:01 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 14:04:01 - WARNING -  * Debugger is active!
+2026-01-16 14:04:01 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 14:04:04 - DEBUG - [PRODUCT-STORAGE] Recuperados 8 produtos
+2026-01-16 14:04:04 - DEBUG - [PRODUCT-SERVICE] Get all Products: 8 found
+2026-01-16 14:04:04 - INFO - 127.0.0.1 - - [16/Jan/2026 14:04:04] "GET /produtos HTTP/1.1" 200 -
+2026-01-16 14:04:16 - DEBUG - [PRODUCT-API] Request data: {'name': 'carro2', 'price': '100000', 'quantity': 1}
+2026-01-16 14:04:16 - DEBUG - [PRODUCT-SERVICE] Insert Product: {"id": null, "name": "carro2", "price": 100000.0, "quantity": 1}
+2026-01-16 14:04:16 - DEBUG - [PRODUCT-STORAGE] Produto inserido com ID 9
+2026-01-16 14:04:16 - INFO - 127.0.0.1 - - [16/Jan/2026 14:04:16] "[35m[1mPOST /produtos HTTP/1.1[0m" 201 -

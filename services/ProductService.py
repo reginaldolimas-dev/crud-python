@@ -19,8 +19,11 @@ class ProductService:
         if produto.quantity < 0:
             raise ValueError("A quantidade do produto não pode ser negativa")
 
-    def inserir(self, produto:ProductModel) -> int:
+    def inserir(self, dados: dict) -> int:
         try:
+            if not dados:
+                raise ValueError("Dados do produto são obrigatórios")
+            produto = ProductModel.fromDict(dados)
             self._validacao(produto)
             logging.debug(f"[PRODUCT-SERVICE] Insert Product: {produto.toJson()}")
             produto.id = str(uuid.uuid4())
@@ -44,6 +47,9 @@ class ProductService:
     def buscarPorId(self, id:int) -> ProductModel:
         try:
             produto = self.storage.getById(id)
+            if produto is None:
+                logging.debug(f"[PRODUCT-SERVICE] Produto com ID {id} não encontrado")
+                raise ValueError(f"Produto com ID {id} não encontrado")
             logging.debug(f"[PRODUCT-SERVICE] Get Product by ID: {id}")
             return produto
         except Exception as error:
@@ -59,12 +65,7 @@ class ProductService:
                 logging.debug(f"[PRODUCT-SERVICE] Produto {id} não encontrado para atualização")
                 return None
 
-            produto_atualizado = ProductModel(
-                id=existente.id,
-                name=dados["name"] if "name" in dados else existente.name,
-                price=float(dados["price"]) if "price" in dados else existente.price,
-                quantity=int(dados["quantity"]) if "quantity" in dados else existente.quantity,
-            )
+            produto_atualizado = ProductModel.fromDict(dados, existente=existente)
 
             self._validacao(produto_atualizado)
             logging.debug(f"[PRODUCT-SERVICE] Atualizando Produto ID {id}: {produto_atualizado.toJson()}")

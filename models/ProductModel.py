@@ -15,12 +15,21 @@ class ProductModel:
         self.quantity = quantity
 
     @classmethod
-    def fromDict(cls, data: dict):
-        return cls(
-            name=data["name"],
-            price=float(data["price"]),
-            quantity=int(data["quantity"])
-        )
+    def fromDict(cls, data: dict, existente: Optional['ProductModel'] = None):
+        if existente:
+            return cls(
+                id=existente.id,
+                name=data.get("name", existente.name),
+                price=float(data.get("price", existente.price)),
+                quantity=int(data.get("quantity", existente.quantity))
+            )
+        else:
+            return cls(
+                name=data["name"],
+                price=float(data["price"]),
+                quantity=int(data["quantity"]),
+                id=data.get("id")
+            )
 
     def toDict(self) -> dict:
         return {

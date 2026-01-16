@@ -46,3 +46,297 @@
 2026-01-16 14:04:16 - DEBUG - [PRODUCT-SERVICE] Insert Product: {"id": null, "name": "carro2", "price": 100000.0, "quantity": 1}
 2026-01-16 14:04:16 - DEBUG - [PRODUCT-STORAGE] Produto inserido com ID 9
 2026-01-16 14:04:16 - INFO - 127.0.0.1 - - [16/Jan/2026 14:04:16] "[35m[1mPOST /produtos HTTP/1.1[0m" 201 -
+2026-01-16 14:43:29 - DEBUG - [PRODUCT-STORAGE] Recuperados 9 produtos
+2026-01-16 14:43:29 - DEBUG - [PRODUCT-SERVICE] Get all Products: 9 found
+2026-01-16 14:43:29 - INFO - 127.0.0.1 - - [16/Jan/2026 14:43:29] "GET /produtos HTTP/1.1" 200 -
+2026-01-16 14:43:38 - DEBUG - [PRODUCT-STORAGE] Produto de ID 9 excluído com sucesso.
+2026-01-16 14:43:38 - DEBUG - [PRODUCT-SERVICE] Produto 9 excluído com sucesso
+2026-01-16 14:43:38 - INFO - 127.0.0.1 - - [16/Jan/2026 14:43:38] "DELETE /produtos/9 HTTP/1.1" 200 -
+2026-01-16 14:43:48 - DEBUG - [PRODUCT-STORAGE] Recuperados 8 produtos
+2026-01-16 14:43:48 - DEBUG - [PRODUCT-SERVICE] Get all Products: 8 found
+2026-01-16 14:43:48 - INFO - 127.0.0.1 - - [16/Jan/2026 14:43:48] "GET /produtos HTTP/1.1" 200 -
+2026-01-16 15:23:37 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\app.py', reloading
+2026-01-16 15:23:37 - INFO -  * Restarting with stat
+2026-01-16 15:23:38 - INFO - === Aplicação iniciando ===
+2026-01-16 15:23:38 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 15:23:38 - WARNING -  * Debugger is active!
+2026-01-16 15:23:38 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 15:23:54 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\services\\ProductService.py', reloading
+2026-01-16 15:23:54 - INFO -  * Restarting with stat
+2026-01-16 15:36:44 - INFO - === Aplicação iniciando ===
+2026-01-16 15:36:44 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 15:36:44 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.20.4.29:5000
+2026-01-16 15:36:44 - INFO - [33mPress CTRL+C to quit[0m
+2026-01-16 15:36:44 - INFO -  * Restarting with stat
+2026-01-16 15:36:45 - INFO - === Aplicação iniciando ===
+2026-01-16 15:36:45 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 15:36:45 - WARNING -  * Debugger is active!
+2026-01-16 15:36:45 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 15:36:53 - DEBUG - [PRODUCT-STORAGE] Produto de ID 1 recuperado.
+2026-01-16 15:36:53 - DEBUG - [PRODUCT-SERVICE] Get Product by ID: 1
+2026-01-16 15:36:53 - INFO - 127.0.0.1 - - [16/Jan/2026 15:36:53] "GET /produtos/1 HTTP/1.1" 200 -
+2026-01-16 15:36:57 - DEBUG - [PRODUCT-STORAGE] Produto de ID 11 não encontrado.
+2026-01-16 15:36:57 - DEBUG - [PRODUCT-SERVICE] Produto com ID 11 não encontrado
+2026-01-16 15:36:57 - ERROR - [PRODUCT-SERVICE] Fail: Produto com ID 11 não encontrado -> Traceback (most recent call last):
+  File "C:\estudo\crud-python\services\ProductService.py", line 49, in buscarPorId
+    raise ValueError(f"Produto com ID {id} não encontrado")
+ValueError: Produto com ID 11 não encontrado
+
+2026-01-16 15:36:57 - ERROR - [PRODUCT-API] Error to try get product id 11: 'NoneType' object has no attribute 'toDict'
+2026-01-16 15:36:57 - INFO - 127.0.0.1 - - [16/Jan/2026 15:36:57] "[35m[1mGET /produtos/11 HTTP/1.1[0m" 500 -
+2026-01-16 15:39:20 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\app.py', reloading
+2026-01-16 15:39:20 - INFO -  * Restarting with stat
+2026-01-16 15:51:19 - INFO - === Aplicação iniciando ===
+2026-01-16 15:51:19 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 15:51:19 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.20.4.29:5000
+2026-01-16 15:51:19 - INFO - [33mPress CTRL+C to quit[0m
+2026-01-16 15:51:19 - INFO -  * Restarting with stat
+2026-01-16 15:51:19 - INFO - === Aplicação iniciando ===
+2026-01-16 15:51:19 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 15:51:19 - WARNING -  * Debugger is active!
+2026-01-16 15:51:19 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 15:51:30 - DEBUG - [PRODUCT-STORAGE] Produto de ID 11 não encontrado.
+2026-01-16 15:51:30 - DEBUG - [PRODUCT-SERVICE] Produto com ID 11 não encontrado
+2026-01-16 15:51:30 - ERROR - [PRODUCT-SERVICE] Fail: Produto com ID 11 não encontrado -> Traceback (most recent call last):
+  File "C:\estudo\crud-python\services\ProductService.py", line 49, in buscarPorId
+    raise ValueError(f"Produto com ID {id} não encontrado")
+ValueError: Produto com ID 11 não encontrado
+
+2026-01-16 15:51:30 - ERROR - [PRODUCT-API] Erro ao processar requisição: 'NoneType' object has no attribute 'toDict'
+2026-01-16 15:51:30 - INFO - 127.0.0.1 - - [16/Jan/2026 15:51:30] "[35m[1mGET /produtos/11 HTTP/1.1[0m" 500 -
+2026-01-16 15:51:43 - DEBUG - [PRODUCT-STORAGE] Produto de ID 1 recuperado.
+2026-01-16 15:51:43 - DEBUG - [PRODUCT-SERVICE] Get Product by ID: 1
+2026-01-16 15:51:43 - INFO - 127.0.0.1 - - [16/Jan/2026 15:51:43] "GET /produtos/1 HTTP/1.1" 200 -
+2026-01-16 15:51:51 - DEBUG - [PRODUCT-STORAGE] Produto de ID 12 não encontrado.
+2026-01-16 15:51:51 - DEBUG - [PRODUCT-SERVICE] Produto com ID 12 não encontrado
+2026-01-16 15:51:51 - ERROR - [PRODUCT-SERVICE] Fail: Produto com ID 12 não encontrado -> Traceback (most recent call last):
+  File "C:\estudo\crud-python\services\ProductService.py", line 49, in buscarPorId
+    raise ValueError(f"Produto com ID {id} não encontrado")
+ValueError: Produto com ID 12 não encontrado
+
+2026-01-16 15:51:51 - ERROR - [PRODUCT-API] Erro ao processar requisição: 'NoneType' object has no attribute 'toDict'
+2026-01-16 15:51:51 - INFO - 127.0.0.1 - - [16/Jan/2026 15:51:51] "[35m[1mGET /produtos/12 HTTP/1.1[0m" 500 -
+2026-01-16 15:58:06 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\app.py', reloading
+2026-01-16 15:58:06 - INFO -  * Restarting with stat
+2026-01-16 15:58:06 - INFO - === Aplicação iniciando ===
+2026-01-16 15:58:06 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 15:58:06 - WARNING -  * Debugger is active!
+2026-01-16 15:58:06 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 15:58:10 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\app.py', reloading
+2026-01-16 15:58:10 - INFO -  * Restarting with stat
+2026-01-16 15:58:11 - INFO - === Aplicação iniciando ===
+2026-01-16 15:58:11 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 15:58:11 - WARNING -  * Debugger is active!
+2026-01-16 15:58:11 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 15:58:27 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\app.py', reloading
+2026-01-16 15:58:27 - INFO -  * Restarting with stat
+2026-01-16 15:58:27 - INFO - === Aplicação iniciando ===
+2026-01-16 15:58:27 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 15:58:27 - WARNING -  * Debugger is active!
+2026-01-16 15:58:27 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 15:58:31 - INFO - 127.0.0.1 - - [16/Jan/2026 15:58:31] "[33mGET /produtos/ HTTP/1.1[0m" 404 -
+2026-01-16 15:58:36 - DEBUG - [PRODUCT-STORAGE] Recuperados 8 produtos
+2026-01-16 15:58:36 - DEBUG - [PRODUCT-SERVICE] Get all Products: 8 found
+2026-01-16 15:58:36 - INFO - 127.0.0.1 - - [16/Jan/2026 15:58:36] "GET /produtos HTTP/1.1" 200 -
+2026-01-16 16:00:09 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\app.py', reloading
+2026-01-16 16:00:09 - INFO -  * Restarting with stat
+2026-01-16 16:00:09 - INFO - === Aplicação iniciando ===
+2026-01-16 16:00:09 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:00:09 - WARNING -  * Debugger is active!
+2026-01-16 16:00:09 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:01:08 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\app.py', reloading
+2026-01-16 16:01:08 - INFO -  * Restarting with stat
+2026-01-16 16:01:08 - INFO - === Aplicação iniciando ===
+2026-01-16 16:01:08 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:01:08 - WARNING -  * Debugger is active!
+2026-01-16 16:01:08 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:03:14 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\app.py', reloading
+2026-01-16 16:03:15 - INFO -  * Restarting with stat
+2026-01-16 16:03:15 - INFO - === Aplicação iniciando ===
+2026-01-16 16:03:15 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:03:15 - WARNING -  * Debugger is active!
+2026-01-16 16:03:15 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:05:04 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\app.py', reloading
+2026-01-16 16:05:04 - INFO -  * Restarting with stat
+2026-01-16 16:05:05 - INFO - === Aplicação iniciando ===
+2026-01-16 16:05:05 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:05:05 - WARNING -  * Debugger is active!
+2026-01-16 16:05:05 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:06:59 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\app.py', reloading
+2026-01-16 16:06:59 - INFO -  * Restarting with stat
+2026-01-16 16:07:00 - INFO - === Aplicação iniciando ===
+2026-01-16 16:07:00 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:07:00 - WARNING -  * Debugger is active!
+2026-01-16 16:07:00 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:07:19 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\services\\ProductService.py', reloading
+2026-01-16 16:07:19 - INFO -  * Restarting with stat
+2026-01-16 16:07:19 - INFO - === Aplicação iniciando ===
+2026-01-16 16:07:19 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:07:19 - WARNING -  * Debugger is active!
+2026-01-16 16:07:19 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:07:27 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\services\\ProductService.py', reloading
+2026-01-16 16:07:27 - INFO -  * Restarting with stat
+2026-01-16 16:07:27 - INFO - === Aplicação iniciando ===
+2026-01-16 16:07:27 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:07:27 - WARNING -  * Debugger is active!
+2026-01-16 16:07:27 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:07:50 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\services\\ProductService.py', reloading
+2026-01-16 16:07:50 - INFO -  * Restarting with stat
+2026-01-16 16:07:50 - INFO - === Aplicação iniciando ===
+2026-01-16 16:07:50 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:07:50 - WARNING -  * Debugger is active!
+2026-01-16 16:07:50 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:10:23 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\app.py', reloading
+2026-01-16 16:10:23 - INFO -  * Restarting with stat
+2026-01-16 16:10:23 - INFO - === Aplicação iniciando ===
+2026-01-16 16:10:23 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:10:23 - WARNING -  * Debugger is active!
+2026-01-16 16:10:23 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:14:22 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\models\\ProductModel.py', reloading
+2026-01-16 16:14:22 - INFO -  * Restarting with stat
+2026-01-16 16:14:22 - INFO - === Aplicação iniciando ===
+2026-01-16 16:14:22 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:14:22 - WARNING -  * Debugger is active!
+2026-01-16 16:14:22 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:15:07 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\services\\ProductService.py', reloading
+2026-01-16 16:15:07 - INFO -  * Restarting with stat
+2026-01-16 16:15:07 - INFO - === Aplicação iniciando ===
+2026-01-16 16:15:07 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:15:07 - WARNING -  * Debugger is active!
+2026-01-16 16:15:07 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:15:17 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\models\\ProductModel.py', reloading
+2026-01-16 16:15:17 - INFO -  * Restarting with stat
+2026-01-16 16:15:17 - INFO - === Aplicação iniciando ===
+2026-01-16 16:15:17 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:15:17 - WARNING -  * Debugger is active!
+2026-01-16 16:15:17 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:15:24 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\services\\ProductService.py', reloading
+2026-01-16 16:15:24 - INFO -  * Restarting with stat
+2026-01-16 16:15:24 - INFO - === Aplicação iniciando ===
+2026-01-16 16:15:24 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:15:24 - WARNING -  * Debugger is active!
+2026-01-16 16:15:24 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:16:00 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\app.py', reloading
+2026-01-16 16:16:00 - INFO -  * Restarting with stat
+2026-01-16 16:16:00 - INFO - === Aplicação iniciando ===
+2026-01-16 16:16:00 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:16:00 - WARNING -  * Debugger is active!
+2026-01-16 16:16:00 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:16:52 - INFO - === Aplicação iniciando ===
+2026-01-16 16:16:52 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:16:52 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.20.4.29:5000
+2026-01-16 16:16:52 - INFO - [33mPress CTRL+C to quit[0m
+2026-01-16 16:16:52 - INFO -  * Restarting with stat
+2026-01-16 16:16:52 - INFO - === Aplicação iniciando ===
+2026-01-16 16:16:52 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:16:52 - WARNING -  * Debugger is active!
+2026-01-16 16:16:52 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:17:11 - DEBUG - [PRODUCT-STORAGE] Recuperados 8 produtos
+2026-01-16 16:17:11 - DEBUG - [PRODUCT-SERVICE] Get all Products: 8 found
+2026-01-16 16:17:11 - INFO - 127.0.0.1 - - [16/Jan/2026 16:17:11] "GET /produtos HTTP/1.1" 200 -
+2026-01-16 16:17:14 - DEBUG - [PRODUCT-STORAGE] Recuperados 8 produtos
+2026-01-16 16:17:14 - DEBUG - [PRODUCT-SERVICE] Get all Products: 8 found
+2026-01-16 16:17:14 - INFO - 127.0.0.1 - - [16/Jan/2026 16:17:14] "GET /produtos HTTP/1.1" 200 -
+2026-01-16 16:17:20 - DEBUG - [PRODUCT-STORAGE] Produto de ID 1 recuperado.
+2026-01-16 16:17:20 - DEBUG - [PRODUCT-SERVICE] Get Product by ID: 1
+2026-01-16 16:17:20 - INFO - 127.0.0.1 - - [16/Jan/2026 16:17:20] "GET /produtos/1 HTTP/1.1" 200 -
+2026-01-16 16:17:25 - DEBUG - [PRODUCT-STORAGE] Recuperados 8 produtos
+2026-01-16 16:17:25 - DEBUG - [PRODUCT-SERVICE] Get all Products: 8 found
+2026-01-16 16:17:25 - INFO - 127.0.0.1 - - [16/Jan/2026 16:17:25] "GET /produtos HTTP/1.1" 200 -
+2026-01-16 16:18:40 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\app.py', reloading
+2026-01-16 16:18:40 - INFO -  * Restarting with stat
+2026-01-16 16:18:40 - INFO - === Aplicação iniciando ===
+2026-01-16 16:18:40 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:18:40 - WARNING -  * Debugger is active!
+2026-01-16 16:18:40 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:18:45 - INFO - === Aplicação iniciando ===
+2026-01-16 16:18:45 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:18:45 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.20.4.29:5000
+2026-01-16 16:18:45 - INFO - [33mPress CTRL+C to quit[0m
+2026-01-16 16:18:45 - INFO -  * Restarting with stat
+2026-01-16 16:18:46 - INFO - === Aplicação iniciando ===
+2026-01-16 16:18:46 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:18:46 - WARNING -  * Debugger is active!
+2026-01-16 16:18:46 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:18:55 - DEBUG - [PRODUCT-STORAGE] Recuperados 8 produtos
+2026-01-16 16:18:55 - DEBUG - [PRODUCT-SERVICE] Get all Products: 8 found
+2026-01-16 16:18:55 - INFO - 127.0.0.1 - - [16/Jan/2026 16:18:55] "GET /produtos HTTP/1.1" 200 -
+2026-01-16 16:19:05 - DEBUG - [PRODUCT-STORAGE] Produto de ID 1 excluído com sucesso.
+2026-01-16 16:19:05 - DEBUG - [PRODUCT-SERVICE] Produto 1 excluído com sucesso
+2026-01-16 16:19:05 - INFO - 127.0.0.1 - - [16/Jan/2026 16:19:05] "DELETE /produtos/1 HTTP/1.1" 200 -
+2026-01-16 16:19:08 - INFO - 127.0.0.1 - - [16/Jan/2026 16:19:08] "[33mDELETE /produtos/ HTTP/1.1[0m" 404 -
+2026-01-16 16:19:10 - INFO - 127.0.0.1 - - [16/Jan/2026 16:19:10] "[31m[1mDELETE /produtos HTTP/1.1[0m" 405 -
+2026-01-16 16:19:15 - DEBUG - [PRODUCT-STORAGE] Recuperados 7 produtos
+2026-01-16 16:19:15 - DEBUG - [PRODUCT-SERVICE] Get all Products: 7 found
+2026-01-16 16:19:15 - INFO - 127.0.0.1 - - [16/Jan/2026 16:19:15] "GET /produtos HTTP/1.1" 200 -
+2026-01-16 16:19:34 - DEBUG - [PRODUCT-API] Update request data: {'name': 'carro2', 'price': '100000', 'quantity': 3}
+2026-01-16 16:19:34 - DEBUG - [PRODUCT-STORAGE] Produto de ID 2 recuperado.
+2026-01-16 16:19:34 - ERROR - [PRODUCT-SERVICE] Fail: ProductModel.fromDict() got an unexpected keyword argument 'existente' -> Traceback (most recent call last):
+  File "C:\estudo\crud-python\services\ProductService.py", line 68, in atualizar
+    produto_atualizado = ProductModel.fromDict(dados, existente=existente)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ProductModel.fromDict() got an unexpected keyword argument 'existente'
+
+2026-01-16 16:19:34 - ERROR - [PRODUCT-API] Erro ao processar requisição: ProductModel.fromDict() got an unexpected keyword argument 'existente'
+2026-01-16 16:19:34 - INFO - 127.0.0.1 - - [16/Jan/2026 16:19:34] "[35m[1mPUT /produtos/2 HTTP/1.1[0m" 500 -
+2026-01-16 16:22:49 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\models\\ProductModel.py', reloading
+2026-01-16 16:22:49 - INFO -  * Restarting with stat
+2026-01-16 16:22:50 - INFO - === Aplicação iniciando ===
+2026-01-16 16:22:50 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:22:50 - WARNING -  * Debugger is active!
+2026-01-16 16:22:50 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:23:04 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\models\\ProductModel.py', reloading
+2026-01-16 16:23:04 - INFO -  * Restarting with stat
+2026-01-16 16:23:04 - INFO - === Aplicação iniciando ===
+2026-01-16 16:23:04 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:23:04 - WARNING -  * Debugger is active!
+2026-01-16 16:23:04 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:23:09 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\models\\ProductModel.py', reloading
+2026-01-16 16:23:09 - INFO -  * Restarting with stat
+2026-01-16 16:23:09 - INFO - === Aplicação iniciando ===
+2026-01-16 16:23:09 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:23:09 - WARNING -  * Debugger is active!
+2026-01-16 16:23:09 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:23:13 - INFO - === Aplicação iniciando ===
+2026-01-16 16:23:13 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:23:13 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.20.4.29:5000
+2026-01-16 16:23:13 - INFO - [33mPress CTRL+C to quit[0m
+2026-01-16 16:23:13 - INFO -  * Restarting with stat
+2026-01-16 16:23:13 - INFO - === Aplicação iniciando ===
+2026-01-16 16:23:13 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:23:13 - WARNING -  * Debugger is active!
+2026-01-16 16:23:13 - INFO -  * Debugger PIN: 137-046-615
+2026-01-16 16:23:27 - DEBUG - [PRODUCT-API] Update request data: {'quantity': 3}
+2026-01-16 16:23:27 - DEBUG - [PRODUCT-STORAGE] Produto de ID 2 recuperado.
+2026-01-16 16:23:27 - DEBUG - [PRODUCT-SERVICE] Atualizando Produto ID 2: {"id": 2, "name": "carro", "price": 100000.0, "quantity": 3}
+2026-01-16 16:23:27 - DEBUG - [PRODUCT-STORAGE] Produto de ID 2 atualizado com sucesso.
+2026-01-16 16:23:27 - INFO - 127.0.0.1 - - [16/Jan/2026 16:23:27] "PUT /produtos/2 HTTP/1.1" 200 -
+2026-01-16 16:23:32 - DEBUG - [PRODUCT-STORAGE] Produto de ID 2 recuperado.
+2026-01-16 16:23:32 - DEBUG - [PRODUCT-SERVICE] Get Product by ID: 2
+2026-01-16 16:23:32 - INFO - 127.0.0.1 - - [16/Jan/2026 16:23:32] "GET /produtos/2 HTTP/1.1" 200 -
+2026-01-16 16:23:53 - DEBUG - [PRODUCT-API] Update request data: {'name': 'carro10'}
+2026-01-16 16:23:53 - DEBUG - [PRODUCT-STORAGE] Produto de ID 2 recuperado.
+2026-01-16 16:23:53 - DEBUG - [PRODUCT-SERVICE] Atualizando Produto ID 2: {"id": 2, "name": "carro10", "price": 100000.0, "quantity": 3}
+2026-01-16 16:23:53 - DEBUG - [PRODUCT-STORAGE] Produto de ID 2 atualizado com sucesso.
+2026-01-16 16:23:53 - INFO - 127.0.0.1 - - [16/Jan/2026 16:23:53] "PUT /produtos/2 HTTP/1.1" 200 -
+2026-01-16 16:23:57 - INFO -  * Detected change in 'C:\\estudo\\crud-python\\models\\ProductModel.py', reloading
+2026-01-16 16:23:57 - INFO -  * Restarting with stat
+2026-01-16 16:23:57 - INFO - === Aplicação iniciando ===
+2026-01-16 16:23:57 - DEBUG - [PRODUCT-STORAGE] Criando tabela Produtos...
+2026-01-16 16:23:57 - WARNING -  * Debugger is active!
+2026-01-16 16:23:58 - INFO -  * Debugger PIN: 137-046-615

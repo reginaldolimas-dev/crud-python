@@ -16,7 +16,7 @@ service = ProductService()
 logging.basicConfig(
     level=logging.DEBUG, 
     format="%(asctime)s - %(levelname)s - %(message)s",
-    filename="./logs/products-service.log",
+    filename="/logs/products-service.log",
     filemode='a',
     datefmt='%H:%M:%S',
 )
@@ -107,8 +107,18 @@ def atualizar(id):
         errorMsg = f"Error to try update product id {id}: {error}"
         logging.error(f"[PRODUCT-API] {errorMsg}")
         return makeResponse(errorMsg), HTTPStatus.INTERNAL_SERVER_ERROR    
+
+@app.route("/produtos/<id>", methods = ['DELETE'])
+def deletar(id):
+    try:
+        apagou = service.deletar(int(id))
+        if not apagou:
+            return makeResponse(f"Produto com ID {id} não encontrado"), HTTPStatus.NOT_FOUND
+        return makeResponse(f"Produto excluído com sucesso"), HTTPStatus.OK
+    except Exception as error:
+        errorMsg = f"Error to try delete product id {id}: {error}"
+        logging.error(f"[PRODUCT-API] {errorMsg}")
+        return makeResponse(errorMsg), HTTPStatus.INTERNAL_SERVER_ERROR
     
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
-
-# TODO DELETE   
+    app.run(host="0.0.0.0", port=5000, debug=True) 

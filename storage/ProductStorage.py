@@ -103,5 +103,19 @@ class ProductStorage:
         except Exception as error:
             logging.error(f"[PRODUCT-STORAGE] Falha ao atualizar produto: {error}")
             raise error
-    
-    # TODO DELETE
+
+    def delete(self, id: int) -> bool:
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("DELETE FROM produtos WHERE id = ?", (id,))
+            self.conn.commit()
+
+            if cursor.rowcount == 0:
+                logging.debug(f"[PRODUCT-STORAGE] Produto de ID {id} não encontrado para exclusão.")
+                return False
+
+            logging.debug(f"[PRODUCT-STORAGE] Produto de ID {id} excluído com sucesso.")
+            return True
+        except Exception as error:
+            logging.error(f"[PRODUCT-STORAGE] Falha ao excluir produto: {error}")
+            raise error

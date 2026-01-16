@@ -77,4 +77,15 @@ class ProductService:
         except Exception as error:
             logging.error(f"[PRODUCT-SERVICE] Fail: {error} -> {traceback.format_exc()}")
             raise
-    # TODO DELETE
+
+    def deletar(self, id: int) -> bool:
+        try:
+            apagou = self.storage.delete(id)
+            if not apagou:
+                logging.debug(f"[PRODUCT-SERVICE] Produto {id} não encontrado para exclusão")
+            else:
+                logging.debug(f"[PRODUCT-SERVICE] Produto {id} excluído com sucesso")
+            return apagou
+        except Exception as error:
+            logging.error(f"[PRODUCT-SERVICE] Fail: {error} -> {traceback.format_exc()}")
+            raise
